@@ -1,0 +1,14 @@
+.level{
+	width:320px;height:20px;
+	border:1px solid #CCCCCC;
+	margin:5px 10px;
+	position:relative;
+}
+.level-control{
+	width:20px;height:40px;
+	background:#337AB7;
+	position:absolute;
+	top:-10px;
+	left:150px;
+	cursor:pointer;
+}

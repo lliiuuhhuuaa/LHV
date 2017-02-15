@@ -1,0 +1,147 @@
+*{
+    padding:0;margin:0;
+}
+li{
+    list-style: none;
+}
+.clear{
+    clear:both;
+}
+body{
+    background:rgba(255,255,255,0.8);
+}
+/*顶部*/
+.box>.head{
+    width:100%;
+    height:600px;
+}
+.head .head{
+    width:90%;
+    height:60px;
+    margin:0 auto;
+    color:#FFF;
+    min-width:850px;
+}
+.head .search{
+    margin-top:10px;
+}
+.head .search .searchIcon{
+    background:rgba(255,255,255,0.5);
+    border:none;
+    color:#FFF;
+}
+.head .search input{
+    background:rgba(255,255,255,0.5);
+    border:none;
+    color:#FFF;
+    height:35px;
+}
+.search button{
+    height:35px;
+}
+.myInfo>ul{
+    margin-top:10px;
+    float:right;
+}
+.myInfo>ul>li{
+    list-style: none;
+    float:left;
+    width:50px;height:50px;
+    text-align: center;
+    font-size:12px;
+    cursor:pointer;
+    color:#555;
+    position:relative;
+}
+.more{
+    z-index:100;
+}
+.myInfo .more{
+    width:300px;
+    background:#FFF;
+    display:none;
+    position:absolute;
+    left:-125px;top:55px;
+    color:#FFF;
+}
+.more ul{
+    padding:0;
+}
+.more ul li{
+    color:#000;
+    list-style: none;
+    height:50px;
+    padding:10px;
+    position: relative;
+}
+.more ul li .title{
+    float:left;
+    font-size:15px;
+    margin:0;
+}
+.more ul li .title2{
+    position:absolute;
+    left:25px;top:30px;
+    color:#888;
+    font-size:12px;
+}
+.more ul li .button{
+    position: absolute;
+    right:10px;top:15px;
+    width:60px;height:30px;
+    border:2px solid #F0AD4E;
+    border-radius: 10px;
+    line-height: 25px;
+}
+.more ul li .sign:hover{
+    background:#F0AD4E;
+    color:#FFF;
+}
+.myInfo .myMore{
+	position:absolute;
+    left:auto;
+    right:-15px;
+}
+.myInfo>ul>li:hover{
+    color:#FFF !important;
+}
+.myPhoto{
+    width:40px !important;height:40px !important;
+    border-radius:20px;
+    border:1px solid #FFF;
+}
+.myInfo ul li i{
+    font-size:20px;
+}
+.myInfo .more i{
+	width:20px;
+    position:absolute;
+    top:-15px;left:140px;
+}
+.myInfo .myMore i{
+   left:auto;right:30px;
+}
+.watched ul,.collect ul{
+	padding:5px;
+}
+.watched ul li,.collect ul li{
+    text-align: center;
+    height:30px;
+    line-height:30px;
+    padding:0px;overflow:hidden;
+}
+.watched ul li a,.collect ul li a{
+	color:#222;
+}
+.watched ul li:hover,.collect ul li:hover{
+    background:rgba(0,0,0,0.2);
+}
+.watched ul li:hover a,.collect ul li:hover a{
+	font-weight:bold;
+}
+.set{
+    position: absolute;right:5px;top:5px;
+}
+.set span{
+	color:#000;
+}

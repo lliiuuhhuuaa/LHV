@@ -1,0 +1,88 @@
+
+.rootMenu{
+    background:rgba(255,255,255,0.2);
+    width:90%;height:30px;
+    margin:0 auto;
+    border-radius:10px;
+    overflow:hidden;
+    font-weight:bold;
+}
+.rootMenu ul li{
+    float:left;
+    color:#FFF;
+    margin:5px 20px;
+}
+.rootMenu ul li a{
+	color:#FFF;
+}
+.rootMenu ul li a:hover{
+    color:#E0AD4E !important;
+    cursor:pointer;
+}
+.marketingMenu{
+    width:250px;height:300px;
+    background:rgba(255,255,255,0.8);
+    position: absolute;
+    right:150px;top:150px;
+    font-weight:bold;
+    z-index: 11;
+}
+.marketingMenu ul li{
+    font-size:15px;
+    padding:5px 10px;
+    height:30px;overflow:hidden;
+    text-align:center;
+}
+.marketingMenu ul li:hover{
+    cursor:pointer;
+    background:#E0AD4E;
+    color:#FFF;
+}
+.marketingMenu ul li a{
+    color:#333;
+}
+.marketingMenu ul li a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+    color: #FFF;
+}
+.marketingMenu ul li.checked{
+    background:#E0AD4E;
+    color:#FFF;
+}
+.marketingMenu ul li.checked a{
+    color:#FFF;
+}
+/*/顶部*/
+/*中部*/
+.contact-box{
+    padding:0 !important;margin:5px 0 !important;
+}
+.big_img_div1,.big_img_div2{
+    width:100%;height:600px;z-index:1 !important;
+    position: absolute;top:0;left:0;
+}
+.item_2{
+    padding:0 5px !important;
+}
+.item_2 .contact-box:hover{
+    padding: 0;
+    -webkit-box-shadow: 0 0 5px #000;
+    -moz-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+.item_1 .category strong a:hover{
+	color:#E0AD4E;
+}
+/* @media(max-width:1400px) {
+    .item_1{
+       margin:0 !important;
+    }
+} */
+/*/中部*/
+/*底部*/
+.foot{
+    position: static;
+    bottom:0px;
+    text-align:center;
+}
+/*底部*/
