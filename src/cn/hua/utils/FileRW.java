@@ -3,11 +3,9 @@ package cn.hua.utils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Writer;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.util.ArrayList;
@@ -19,7 +17,6 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.dom4j.Node;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
@@ -378,6 +375,7 @@ public class FileRW {
 	public static boolean saveBarrage(String id,Barrage barrage){
 		File file = new File(getUUID_dir(properties.getProperty("barrage"), id,"xml"));
 		SAXReader reader = new SAXReader();
+		reader.setEncoding("UTF-8");
     	Document doc = null;
     	Element root=null;
     	try {
@@ -410,6 +408,7 @@ public class FileRW {
 			return null;
 		}
     	SAXReader reader = new SAXReader();
+    	reader.setEncoding("UTF-8");
     	Document doc;
 		try {
 			doc = reader.read(file);
@@ -437,11 +436,11 @@ public class FileRW {
 	}
 	//保存文件
     public static boolean saveXml(Document doc,File file){
-		 OutputFormat outputFormat = OutputFormat.createPrettyPrint();  
+		 OutputFormat outputFormat = new OutputFormat("\t", true);
+		 outputFormat.setEncoding("UTF-8");
 	     outputFormat.setLineSeparator("\r\n");//这是为了换行操作  
 		try {
-			Writer writer = new FileWriter(file);
-			XMLWriter output = new XMLWriter(writer,outputFormat);  
+			XMLWriter output = new XMLWriter(new FileOutputStream(file),outputFormat);  
 			output.write(doc);
 			output.close();
 			return true;
@@ -460,6 +459,7 @@ public class FileRW {
 	public static boolean saveComment(String id, Comment comment) {
 		File file = new File(getUUID_dir(properties.getProperty("comment"),id,"xml"));
 		SAXReader reader = new SAXReader();
+		reader.setEncoding("UTF-8");
     	Document doc = null;
     	Element root=null;
     	try {
@@ -491,6 +491,7 @@ public class FileRW {
 			return null;
 		}
     	SAXReader reader = new SAXReader();
+    	reader.setEncoding("UTF-8");
     	Document doc;
 		try {
 			doc = reader.read(file);

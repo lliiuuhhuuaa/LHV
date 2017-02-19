@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -402,16 +402,18 @@ a {
 	}
 	//切换播放器
 	function switch_play(){
+		console.log("switch_play")
 		$("#danmup").remove();
 		$(".player").append($('<div id="a1" style="height:100%;width:100%"></div>'));
 		var flashvars={
-		f:'${pageContext.request.contextPath}/play/${requestScope.sources!=null?requestScope.current_source.source.id:''}',//视频地址
+		f:"${pageContext.request.contextPath}/play/${requestScope.sources!=null?requestScope.current_source.source.id:''}",//视频地址
 		c:0,
-		b:0,
+		b:0
 		};
-		var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
-	    CKobject.embedSWF('ckplayer/ckplayer.swf','a1','ckplayer_a1','100%','100%',flashvars,params);
-		try{
+		var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always'};
+	  var video=["${pageContext.request.contextPath}/play/${requestScope.sources!=null?requestScope.current_source.source.id:''}->video/mp4"];
+		CKobject.embed('ckplayer/ckplayer.swf','a1','ckplayer_a1','100%','100%',false,flashvars,video,params);
+		/* try{
 			query();
 		}catch(e){
 			$.get("json/getBarrage/${requestScope.current_source.id}", function(data, status) {
@@ -422,7 +424,7 @@ a {
 				}
 			});
 			watched();
-		}
+		} */
 	}
 	//播放完后调用此方法
 	function play_next(){

@@ -150,7 +150,7 @@ function requestComment(){
 		    	if(data[d].img_id!=null) $newComm.find("img").attr("src","source/img/avatar/"+data[d].img_id);
 		    	else $newComm.find("img").attr("src","img/noPhoto.png");
 		    	if(data[d].name!=null) $newComm.find(".send_comment_name").html(data[d].name);
-		    	else $newComm.find(".name").html("游客");
+		    	else $newComm.find(".send_comment_name").html("游客");
 		        $(".send_div").after($newComm);
 			}
 			bindClick();

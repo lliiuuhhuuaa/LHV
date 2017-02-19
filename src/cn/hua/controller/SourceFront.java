@@ -232,6 +232,7 @@ public class SourceFront {
 		if(source!=null){
 			Map<String,Object> map = new HashMap<String,Object>();
 			map.put("file", new File(source.getCvpath()!=null?source.getCvpath():source.getPath()));  
+			map.put("name", source.getId());
 			map.put("contentType", "video/mp4");
 			ByteRangeViewRender render = new ByteRangeViewRender();
 			try {
@@ -401,7 +402,13 @@ public class SourceFront {
 			ModelAndView mv = new ModelAndView(new ByteRangeViewRender());
 			mv.addObject("file",new File(source.getSource().getCvpath()!=null?source.getSource().getCvpath():source.getSource().getPath()));
 			mv.addObject("contentType","download/file");
-			mv.addObject("name", source.getId().equals(source.getSeriesname())?source.getName():source.getSeriesname()+"　"+source.getName()+source.getSource().getPath().substring(source.getSource().getPath().indexOf(".")));
+			String suffix="";
+			if(source.getSource().getCvpath()!=null){
+				suffix = source.getSource().getCvpath().substring(source.getSource().getCvpath().indexOf("."));
+			}else{
+				suffix = source.getSource().getPath().substring(source.getSource().getPath().indexOf("."));
+			}
+			mv.addObject("name", (source.getId().equals(source.getSeriesname())?source.getName():source.getSeriesname()+"　"+source.getName())+suffix);
 			return mv;
 		}
 		return null;

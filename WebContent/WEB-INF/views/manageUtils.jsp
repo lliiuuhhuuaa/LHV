@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
@@ -102,49 +102,17 @@
 			setStaticTime();
 			bindEvent();
 		}
-		/* $("#autoOnline").click(function(){
-			//询问框
-			parent.layer.confirm('资源审核操作比较消耗系统资源，建议在闲时进行操作', {
-			    btn: ['现在就很闲','等会再来'], //按钮
-			    shade:  0.5 //不显示遮罩
-			}, function(){
-				createMission("autoOnline","资源上线审核");
-			}, function(){
-			    parent.layer.msg('您已取消审核操作', {shift: 6});
-			});
-		})
-		$("#autoOffline").click(function(){
-			//询问框
-			parent.layer.confirm('资源审核操作比较消耗系统资源，建议在闲时进行操作', {
-			    btn: ['现在就很闲','等会再来'], //按钮
-			    shade:  0.5 //不显示遮罩
-			}, function(){
-				createMission("autoOffline","资源下线审核");
-			}, function(){
-			    parent.layer.msg('您已取消审核操作', {shift: 6});
-			});
-		})
-		$("#clearRubbish").click(function(){
-			//询问框
-			parent.layer.confirm('资源审核操作比较消耗系统资源，建议在闲时进行操作', {
-			    btn: ['现在就很闲','等会再来'], //按钮
-			    shade:  0.5 //不显示遮罩
-			}, function(){
-				createMission("clearRubbish","垃圾文件清理");
-			}, function(){
-			    parent.layer.msg('您已取消审核操作', {shift: 6});
-			});
-		}) */
 		$(".missionButton").click(function(){
+			var type = $(this).parent().find("h4").html();
 			var _this = this;
 			//询问框
-			parent.layer.confirm('资源审核操作比较消耗系统资源，建议在闲时进行操作', {
+			parent.layer.confirm(type+'任务比较消耗系统资源，建议在闲时进行操作', {
 			    btn: ['现在就很闲','等会再来'], //按钮
 			    shade:  0.5 //不显示遮罩
 			}, function(){
 				createMission($(_this).attr("id"),$(_this).parent().find("h4").html());
 			}, function(){
-			    parent.layer.msg('您已取消审核操作', {shift: 6});
+			    parent.layer.msg('您已取消操作', {shift: 6});
 			});
 		})
 		//通信服务器
@@ -172,7 +140,7 @@ function createMission(type,text){
 	}
 }
 function startMission(type,code){
-	var data = "type="+type+"&code="+code+"&state=1&id="+currentID+"&name="+(type=='autoOnline'?'资源上线审核':type=='autoOffline'?'资源下线审核':'垃圾文件清理');
+	var data = "type="+type+"&code="+code+"&state=1&id="+currentID+"&name="+(type=='autoOnline'?'资源上线审核':type=='autoOffline'?'资源下线审核':type=='clearRubbish'?'垃圾文件清理':'视频格式转换');
 	$.post("utils/mission",data,function(data){
 		data = eval("("+data+")");
 		if(!data.message){

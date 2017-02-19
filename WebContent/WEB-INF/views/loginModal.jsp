@@ -202,7 +202,7 @@ img.img.active{
 							</tr>
 							<tr>
 								<td style="text-align: center">
-									<button class="btn btn-primary" type="submit" title="点击开始">更新到数据库</button>
+									<button class="btn btn-primary" type="submit" title="点击开始">开始上传</button>
 									<button class="btn btn-primary" type="button"
 										data-dismiss="modal">关闭</button>
 								</td>

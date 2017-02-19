@@ -369,7 +369,6 @@ class VideoConver extends Thread{
 		try{
 			synchronized (UtilsMission.CONVERLOCK) {
 				System.out.println("liuhua:视频格式转换正在执行");
-				List<MySource> passed = new ArrayList<MySource>();
 				List<MySource> list = service.findSourceByOffline();
 				int num=0;
 				for(int i=0;list!=null&&i<list.size();i++){

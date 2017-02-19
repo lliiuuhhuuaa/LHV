@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 六画
  * 资源管理
  */
@@ -362,7 +362,8 @@ function tooltipUtil(el,title){
 }
 function pathFmatter(cellvalue, options, rowObject){
 	if(cellvalue!=null&&cellvalue instanceof Object){
-		return cellvalue.path;
+		if(cellvalue.cvpath!=null)return cellvalue.cvpath;
+		else return cellvalue.path;
 	}else{
 		return "没有地址";
 	}

@@ -435,7 +435,7 @@ function initSign(){
 		$(".account_need_exp").html(0);
 		$(".myPhoto").attr("src","img/noPhoto.png");
 		$(".comment_box .send_comment_photo").attr("src","img/noPhoto.png");
-		$(".comment_box .send_comment_name").html("");
+		$(".comment_box .send_comment_name").html("游客");
 		$("#level").val(0);
 		watch_exp("cancel");
 }

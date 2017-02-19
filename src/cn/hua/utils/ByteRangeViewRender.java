@@ -44,39 +44,39 @@ public class ByteRangeViewRender extends AbstractView {
          // Validate request headers for caching ---------------------------------------------------  
    
          // If-None-Match header should contain "*" or ETag. If so, then return 304.  
-         String ifNoneMatch = request.getHeader("If-None-Match");  
+         /* String ifNoneMatch = request.getHeader("If-None-Match");  
          if (ifNoneMatch != null && matches(ifNoneMatch, fileName)) {  
              response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);  
              response.setHeader("ETag", eTag); // Required in 304.  
              response.setDateHeader("Expires", expires); // Postpone cache with 1 week.  
              return;  
-         }  
+         }  */
    
          // If-Modified-Since header should be greater than LastModified. If so, then return 304.  
          // This header is ignored if any If-None-Match header is specified.  
-         long ifModifiedSince = request.getDateHeader("If-Modified-Since");  
+         /*long ifModifiedSince = request.getDateHeader("If-Modified-Since");  
          if (ifNoneMatch == null && ifModifiedSince != -1 && ifModifiedSince + 1000 > lastModified) {  
              response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);  
              response.setHeader("ETag", eTag); // Required in 304.  
              response.setDateHeader("Expires", expires); // Postpone cache with 1 week.  
              return;  
-         }  
+         }  */
    
          // Validate request headers for resume ----------------------------------------------------  
    
          // If-Match header should contain "*" or ETag. If not, then return 412.  
-         String ifMatch = request.getHeader("If-Match");  
+         /* String ifMatch = request.getHeader("If-Match");  
          if (ifMatch != null && !matches(ifMatch, fileName)) {  
              response.sendError(HttpServletResponse.SC_PRECONDITION_FAILED);  
              return;  
-         }  
+         }  */
    
          // If-Unmodified-Since header should be greater than LastModified. If not, then return 412.  
-         long ifUnmodifiedSince = request.getDateHeader("If-Unmodified-Since");  
+        /* long ifUnmodifiedSince = request.getDateHeader("If-Unmodified-Since");  
          if (ifUnmodifiedSince != -1 && ifUnmodifiedSince + 1000 <= lastModified) {  
              response.sendError(HttpServletResponse.SC_PRECONDITION_FAILED);  
              return;  
-         }  
+         }  */
            
          // Validate and process range -------------------------------------------------------------  
    
@@ -282,8 +282,12 @@ public class ByteRangeViewRender extends AbstractView {
      private boolean matches(String matchHeader, String toMatch) {  
          String[] matchValues = matchHeader.split("\\s*,\\s*");  
          Arrays.sort(matchValues);  
+         try{
          return Arrays.binarySearch(matchValues, toMatch) > -1  
              || Arrays.binarySearch(matchValues, "*") > -1;  
+         }catch(Exception e){
+        	 return false;
+         }
      }  
    
      // Inner classes ------------------------------------------------------------------------------  

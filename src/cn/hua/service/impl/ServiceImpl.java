@@ -737,7 +737,8 @@ public class ServiceImpl implements ServiceDao{
 				List<WatchedAndCollect> list = globalDao.list(WatchedAndCollect.class, "where userid='"+user.getId()+"' and type='"+type+"'", 0, 11);
 				if(list.size()>=10){
 					WatchedAndCollect temp = list.get(list.size()-1);
-					globalDao.deleteManyByIds(WatchedAndCollect.class, new Integer[]{temp.getId()});
+					globalDao.delete(temp);
+					//globalDao.deleteManyByIds(WatchedAndCollect.class, new Integer[]{temp.getId()});
 				}
 				wc = new WatchedAndCollect(user.getId(), source, type, source.getId().equals(source.getSeriesname())?source.getId():source.getSeriesname(), new Date());
 				add(wc);
