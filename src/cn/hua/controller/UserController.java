@@ -65,7 +65,7 @@ public class UserController {
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String v_loginUI(HttpSession session){
 		User user = (User) session.getAttribute("user");
-		if(user==null)return "redirect:index";
+		if(user!=null)return "redirect:index";
 		return "login";
 	}
 	/**

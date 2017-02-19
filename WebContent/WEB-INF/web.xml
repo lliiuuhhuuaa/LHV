@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.1">
 	<display-name>LHV</display-name>
 	 <welcome-file-list>
-	    <welcome-file>admin</welcome-file>
+	    <welcome-file>index</welcome-file>
 	  </welcome-file-list>
 	  <!-- 配置websocket -->
 	  <absolute-ordering/>
@@ -47,4 +47,12 @@
 		<servlet-name>springDispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<error-page>
+	    <error-code>404</error-code>
+	    <location>/WEB-INF/views/404.jsp</location>
+	</error-page>
+	<error-page>
+	    <error-code>500</error-code>
+	    <location>/WEB-INF/views/500.jsp</location>
+	</error-page>
 </web-app>
