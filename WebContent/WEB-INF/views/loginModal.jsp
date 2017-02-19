@@ -57,7 +57,7 @@ img.img.active{
                 <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
 
 
-                <p class="text-muted text-center"> <a href="login.html#" style="color:#555"><small>忘记密码了？</small></a> | <a href="register" style="color:#555">注册一个新账号</a>
+                <p class="text-muted text-center"> <a href="javascript:void()" onclick="alert('暂不支持找回密码')" style="color:#555"><small>忘记密码了？</small></a> | <a href="register" style="color:#555">注册一个新账号</a>
                 </p>
 
             </form>
@@ -212,6 +212,12 @@ img.img.active{
 				</div>
 			</div>
 		</div>
+	</div>
+<div class="foot" style="background-color:#eee">
+		<p style="margin:0;">
+			Copyright © 1998 - 2016 Liuhua. All Rights Reserved.<br /> 六画公司 版权所有
+			六画网络文化经营许可证
+		</p>
 	</div>
 <div class="fileBoxs"></div>
 <script src="js/admin/seriesAuto.js" type="text/javascript"></script>

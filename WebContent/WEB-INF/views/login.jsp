@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
 
 
-                <p class="text-muted text-center"> <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register">注册一个新账号</a>
+                <p class="text-muted text-center"> <a href="javascript:void()" onclick="alert('暂不支持找回密码')"><small>忘记密码了？</small></a> | <a href="register">注册一个新账号</a>
                 </p>
 
             </form>

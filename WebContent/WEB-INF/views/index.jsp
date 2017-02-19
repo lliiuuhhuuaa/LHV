@@ -424,12 +424,6 @@ p {
 		</div>
 		<!--动漫推荐div结束-->
 	</div>
-	<div class="foot" style="background-color:#eee">
-		<p style="margin:0;">
-			Copyright © 1998 - 2016 Liuhua. All Rights Reserved.<br /> 六画公司 版权所有
-			六画网络文化经营许可证
-		</p>
-	</div>
 	<jsp:include page="loginModal.jsp"></jsp:include>
 </body>
 <script src="js/index.js" type="text/javascript"></script>
